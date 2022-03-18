@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .fundo {
+      background-image: linear-gradient(45deg, black, rgb(18, 132, 35));
+      height: 100vh;
+      color: aliceblue;
+      font-family: arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+    .calculadora {
+      position: absolute;
+      background-color: rgba(15, 94, 6, 0.2);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50px;
+      padding: 30px;
+    }
+    .botao {
+      width: 70px;
+      height: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      background-color: rgb(21, 114, 32);
+      border: rgb(125, 12, 12);
+      color: rgb(220, 227, 218);
+    }
+    .botao:hover {
+      background: rgb(46, 177, 19);
+    }
+  </style>
+  <body>
+    <div class="fundo">
+      <h1>Juliano Albuquerque</h1>
+      <div class="calculadora">
+        <h1>Calculadora</h1>
+        <table>
+          Primeiro Número<br />
+          <input id="n1" type="number" /><br />
+          Segundo Número<br />
+          <input id="n2" type="number" /><br /><br />
+          <td><button onclick="somar()" class="botao">Somar</button></td>
+          <td><button onclick="subtrair()" class="botao">Subtrair</button></td>
+          <td>
+            <button onclick="multiplicar()" class="botao">Multiplicar</button>
+          </td>
+          <td><button onclick="dividir()" class="botao">Dividir</button></td>
+          <br /><br />
+          Resultado
+          <span></span>
+          <script>
+            var n1 = document.querySelector('#n1')
+            var n2 = document.querySelector('#n2')
+            var resultado = document.querySelector('span')
+
+            function somar() {
+              resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
+            }
+
+            function subtrair() {
+              resultado.innerHTML = parseInt(n1.value) - parseInt(n2.value)
+            }
+
+            function multiplicar() {
+              resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value)
+            }
+
+            function dividir() {
+              resultado.innerHTML = parseInt(n1.value) / parseInt(n2.value)
+            }
+          </script>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
